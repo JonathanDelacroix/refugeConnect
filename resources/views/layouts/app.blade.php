@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <title>RefugeConnect</title>
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+     @vite('resources/css/style.css')
 </head>
 <body>
     <div class="container">

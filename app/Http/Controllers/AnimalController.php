@@ -7,7 +7,7 @@ use App\Models\Animal;
 class AnimalController extends Controller {
     public function show($id) {
         $animal = Animal::findOrFail($id);
-        return view('animal.show', compact('animal'));
+        return view('animal.show', compact(['animal']));
     }
 
     public function create() {

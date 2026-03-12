@@ -100,19 +100,19 @@
         color: #52c9ff;
     }
 
-/* CSS fiche animal */
-    .fiche {
+/* CSS card animal */
+    .card-animal {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    .img-fiche{
+    .img-animal{
         width: 15%;
         height: 15%;
     }
 
-    .content-fiche {
+    .content-animal {
     margin: 0 20px;
     align-items: center;
     }

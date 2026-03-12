@@ -5,11 +5,14 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AnimalController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
-Route::get('/animal/create', [AnimalController::class, 'create'])->name('animal.create');
-Route::get('/animal/{id}', [AnimalController::class, 'show'])->name('animal.show');
-Route::get('/animal/modifier/{id}', [AnimalController::class, 'update'])->name('animal.update');
-Route::get('/animal/supprimer/{id}', [AnimalController::class, 'delete'])->name('animal.delete');
+Route::prefix('animal')->group(function () {
+    Route::get('creer', [AnimalController::class, 'create'])->name('animal.create');
+    Route::get('modifier/{id}', [AnimalController::class, 'update'])->name('animal.update');
+    Route::get('supprimer/{id}', [AnimalController::class, 'delete'])->name('animal.delete');
+    Route::get('{id}', [AnimalController::class, 'show'])->name('animal.show');
+});
 
 Route::fallback(function () {
-    return view('errors.404');
+    $title = 'Page non trouvée.';
+    return view('errors.404', compact('title'));
 });
