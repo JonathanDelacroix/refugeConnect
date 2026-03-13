@@ -1,5 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Error - RefugeConnect')
 @section('content')
-    <h1>{{ $title }}</h1>
+    <h1>Page non trouvée.</h1>
 @endsection

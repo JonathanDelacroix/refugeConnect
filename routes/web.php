@@ -13,6 +13,5 @@ Route::prefix('animal')->group(function () {
 });
 
 Route::fallback(function () {
-    $title = 'Page non trouvée.';
-    return view('errors.404', compact('title'));
+    return view('errors.404');
 });
